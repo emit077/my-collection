@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Animate Div Width on Hover in jQuery</title>
+    <style>
+        .box {
+            width: 30%;
+            height: 400px;
+            display: inline-block;
+            margin-top: 70px;
+            background-color: #e6e6fa26;
+            /*padding: 10px 10px;*/
+        }
+
+        .box div {
+            padding: 40% 10px;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .slider-box {
+            /*width: 33%;*/
+            height: 400px;
+            background-color: transparent;
+            position: absolute;
+            /*transition-duration: 0.5s;*/
+            transition-timing-function: ease-in-out;
+            box-shadow: 1px 56px 67px -42px rgba(0, 0, 0, 0.67);
+            -webkit-box-shadow: 1px 56px 67px -42px rgba(0, 0, 0, 0.67);
+            -moz-box-shadow: 1px 56px 67px -42px rgba(0, 0, 0, 0.67);
+        }
+    </style>
+
+</head>
+<body>
+<div class="slider-box"></div>
+<div class="box-container">
+    <div class="box">
+        <div> card 1</div>
+    </div>
+    <div class="box">
+        <div> card 1</div>
+    </div>
+    <div class="box">
+        <div> card 1</div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+  $(document).ready(function () {
+
+    //default
+    $(".slider-box").animate({
+      width: $(".box").width(),
+      left: $(".box")[1].offsetLeft,
+      top: $(".box")[1].offsetTop,
+    });
+    // $(".box-container").mouseleave(function () {
+    //   console.log("leave")
+    //   $(".slider-box").animate({
+    //     width: $(".box").width(),
+    //     left: $(".box")[1].offsetLeft,
+    //     top: $(".box")[1].offsetTop,
+    //   });
+    // });
+
+    // $(".box").mouseenter(function () {
+    //   let positionLeft = $(this)[0].offsetLeft
+    //   let positionTop = $(this)[0].offsetTop
+    //   $(".slider-box").animate({
+    //     left: positionLeft,
+    //     top: positionTop,
+    //   });
+    // })
+    //
+    // $(".box").mouseleave(function () {
+    //   let positionLeft2 = $(this)[0].offsetLeft
+    //   let positionTop2 = $(this)[0].offsetTop
+    //   $(".slider-box").animate({
+    //     left: positionLeft2,
+    //     top: positionTop2,
+    //   });
+    // });
+
+    var update = false
+    $(".box").mouseenter(function () {
+      let positionLeft = $(this)[0].offsetLeft
+      let positionTop = $(this)[0].offsetTop
+      // console.log("update==", update)
+      if (update) {
+        return;
+      }
+      update = true
+      setTimeout(function () {
+        // console.log("aa")
+        $(".slider-box").animate({
+          left: positionLeft,
+          top: positionTop,
+        });
+        update = false
+      }, 70)
+    })
+
+  })
+  ;
+
+</script>
+</html>

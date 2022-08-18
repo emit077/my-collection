@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--<img src="assets/tech-1.svg" alt="" width="900">-->
+<object data="assets/tech-1.svg" width="300" height="200"></object>
+
+</body>
+</html>
+
+
+<style>
+    .ping-wrapper {
+        display: block;
+        position: relative;
+    }
+
+    /* Styles Begin Here */
+    .ping {
+        position: relative;
+        /*top: -35px;*/
+        /*left: -35px;*/
+        /*border: solid #FFF 3px;*/
+        animation: ping 2.5s ease-out infinite;
+        /*-moz-animation-duration: 3s;*/
+        /*-webkit-animation-duration: 3s;*/
+        /*-moz-animation-name: ping ;*/
+        /*-webkit-animation-name: ping;*/
+    }
+
+
+    @-webkit-keyframes ping {
+        0%, 100% {
+            opacity: 0;
+            /*transform: scale(0.2);*/
+        }
+        50% {
+            /*transform: scale(1);*/
+            opacity: 0.8;
+        }
+    }
+
+    @keyframes load {
+        0% {
+            background: #fff;
+            border: 0px solid #fff;
+        }
+        50% {
+            background: #fff;
+            border: 100px solid #222;
+        }
+        100% {
+            background: #fff;
+            border: 0px solid #222;
+        }
+    }
+
+</style>
